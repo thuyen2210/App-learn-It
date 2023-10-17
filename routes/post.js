@@ -35,7 +35,7 @@ router.post('/', verifyToken, async(req,res)=> {
             title, 
             description, 
             url:(url.startsWith('https://')) ? url : `https://${url}`, 
-            status: status|| ' TO LEARN',
+            status: status|| 'TO LEARN',
             user: req.userId
         })
 
@@ -63,7 +63,7 @@ router.put('/:id',verifyToken, async(req,res)=> {
             title,
             description: description || '',
             url:((url.startsWith('https://')) ? url : `https://${url}`) || '',
-            status: status|| ' TO LEARN'
+            status: status|| 'TO LEARN'
           }
   
           const postUpdateCondition = {_id: req.params.id, user: req.userId}
